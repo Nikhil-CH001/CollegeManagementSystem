@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <%- include("../partials/navbar") %>
+
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-10">
+            <!-- Header -->
+            <div class="text-center mb-8">
+                <h1 class="text-3xl font-bold text-blue-700 sm:text-4xl">Contact Us</h1>
+                <p class="mt-4 text-gray-600 text-lg">Have questions? Need help? Reach out to us below.</p>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="bg-white shadow-lg rounded-2xl p-6">
+                <form action="/contact" method="POST" class="space-y-6">
+                    <!-- Name -->
+                    <div>
+                        <label for="name" class="block text-gray-700 font-medium mb-1">Your Name</label>
+                        <input type="text" id="name" name="name" required
+                            class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                    </div>
+
+                    <!-- Email -->
+                    <div>
+                        <label for="email" class="block text-gray-700 font-medium mb-1">Email Address</label>
+                        <input type="email" id="email" name="email" required
+                            class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                    </div>
+
+                    <!-- Message -->
+                    <div>
+                        <label for="message" class="block text-gray-700 font-medium mb-1">Your Message</label>
+                        <textarea id="message" name="message" rows="5" required
+                            class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                    </div>
+
+                    <!-- Submit -->
+                    <div>
+                        <button type="submit"
+                            class="bg-blue-600 text-white font-semibold px-6 py-2 rounded-md hover:bg-blue-700 transition">
+                            Send Message
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Optional Contact Info -->
+            <div class="mt-10 text-center text-gray-600">
+                <p>📍 XYZ College, Kathmandu, Nepal</p>
+                <p>📧 Email: info@xyzcollege.edu.np</p>
+                <p>📞 Phone: +977-1-1234567</p>
+            </div>
+        </div>
+        <%- include("../partials/footer") %>
+</body>
+
+</html>

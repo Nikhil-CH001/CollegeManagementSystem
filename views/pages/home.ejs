@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body>
+    <%- include("../partials/navbar") %>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
+            <!-- Header -->
+            <div class="text-center mb-12">
+                <h1 class="text-4xl font-extrabold text-blue-700 sm:text-5xl">Welcome to College Management System</h1>
+                <p class="mt-4 text-lg text-gray-600">Manage students, teachers, courses, and more from a single
+                    dashboard.</p>
+            </div>
+
+            <!-- Navigation Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Students -->
+                <a href="/students"
+                    class="bg-white rounded-2xl p-6 shadow hover:shadow-lg transition-all border hover:border-blue-500">
+                    <h2 class="text-xl font-semibold text-blue-700">Student Records</h2>
+                    <p class="text-gray-600 mt-2">View and manage student profiles, departments, and enrollment.</p>
+                </a>
+
+                <!-- Teachers -->
+                <a href="/teachers"
+                    class="bg-white rounded-2xl p-6 shadow hover:shadow-lg transition-all border hover:border-blue-500">
+                    <h2 class="text-xl font-semibold text-blue-700">Teacher Directory</h2>
+                    <p class="text-gray-600 mt-2">Add, edit, or view teacher details and assigned classes.</p>
+                </a>
+
+                <!-- Courses -->
+                <a href="/courses"
+                    class="bg-white rounded-2xl p-6 shadow hover:shadow-lg transition-all border hover:border-blue-500">
+                    <h2 class="text-xl font-semibold text-blue-700">Courses</h2>
+                    <p class="text-gray-600 mt-2">Manage subjects, credit hours, and course schedules.</p>
+                </a>
+
+                <!-- Attendance -->
+                <a href="/attendance"
+                    class="bg-white rounded-2xl p-6 shadow hover:shadow-lg transition-all border hover:border-blue-500">
+                    <h2 class="text-xl font-semibold text-blue-700">Attendance</h2>
+                    <p class="text-gray-600 mt-2">Track attendance records for students and staff.</p>
+                </a>
+
+                <!-- Exams -->
+                <a href="/exams"
+                    class="bg-white rounded-2xl p-6 shadow hover:shadow-lg transition-all border hover:border-blue-500">
+                    <h2 class="text-xl font-semibold text-blue-700">Exams & Results</h2>
+                    <p class="text-gray-600 mt-2">Schedule exams and manage result entry and publication.</p>
+                </a>
+
+                <!-- Login -->
+                <a href="/login"
+                    class="bg-white rounded-2xl p-6 shadow hover:shadow-lg transition-all border hover:border-blue-500">
+                    <h2 class="text-xl font-semibold text-blue-700">Login</h2>
+                    <p class="text-gray-600 mt-2">Access admin or student dashboard securely.</p>
+                </a>
+            </div>
+
+            <!-- Notices Section -->
+            <div class="mt-12 bg-blue-50 rounded-xl p-6">
+                <h3 class="text-2xl font-bold text-blue-800 mb-4">📢 Recent Announcements</h3>
+                <ul class="list-disc list-inside text-gray-700 space-y-2">
+                    <li>🗓️ Mid-term exams start from <strong>July 15</strong>.</li>
+                    <li>🎓 Admissions for <strong>2025 batch</strong> are open till August 5.</li>
+                    <li>📢 Annual Sports Meet scheduled for <strong>August 20</strong>.</li>
+                </ul>
+            </div>
+        </div>
+
+        <%- include("../partials/footer") %>
+</body>
+
+</html>
