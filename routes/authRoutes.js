@@ -1,4 +1,5 @@
 // routes/authRoutes.js
+const passport = require("passport");
 const express = require("express");
 const router = express.Router();
 const User = require("../models/userModel");
@@ -11,7 +12,7 @@ router.use(cookieParser())
 require("dotenv").config()
 
 // Show login/register page
-router.get("/auth", (req, res) => {
+router.get("/login", (req, res) => {
   res.render("authentication/auth");
 });
 
@@ -55,5 +56,24 @@ router.post("/login", async (req, res) => {
     res.status(500).send("Login failed: " + error.message);
   }
 });
+
+
+
+// Google login route
+router.get("/auth/google", passport.authenticate("google", { scope: ["profile", "email"] }));
+
+// Google callback route
+router.get("/auth/google/callback", passport.authenticate("google", {
+  successRedirect: "/",
+  failureRedirect: "/auth"
+}));
+
+// Logout
+router.get("/logout", (req, res) => {
+  req.logout(() => {
+    res.redirect("/auth");
+  });
+});
+
 
 module.exports = router;
